@@ -87,7 +87,7 @@ function createJobStateEnum(schema) {
 function createJobTable(schema) {
   return `
     CREATE TABLE ${schema}.job (
-      id uuid primary key not null default gen_random_uuid(),
+      id uuid primary key not null default pgboss.gen_random_uuid(),
       name text not null,
       priority integer not null default(0),
       data jsonb,
